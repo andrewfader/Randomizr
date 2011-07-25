@@ -1,0 +1,49 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3/gradient";
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+
+body {
+    font-family: Calibri, Helvetica Neue, Tahoma;
+    $color: #2966B8;
+    background-color: $color;
+    header {
+        @include background-image(linear-gradient(color-stops(gray, $color)));
+        img {
+            display: inline-block;
+        }
+    }
+    footer {
+       @include background-image(linear-gradient(color-stops($color, gray)));
+    }
+    .button {
+        float: right;
+        margin: 5px 5px 0 0;
+        display: inline-block;
+        padding: 5px;
+        a {
+          color: white;
+          text-decoration: none;
+          &:hover {
+            color: silver;
+          }
+        }
+        @include background-image(linear-gradient(color-stops($color, black)));
+        @include border-radius(4px, 4px);
+        border: 1px gray inset;
+    }
+    section.content {
+       @include background-image(linear-gradient(color-stops(white, lighten($color, 10%))));
+       margin: 15px;
+       padding: 10px;
+       min-height: 400px;
+       border: 1px outset #999;
+       @include border-radius(10px);
+       @include single-box-shadow;
+    }
+}
