@@ -6,7 +6,6 @@ class JumpersController < InheritedResources::Base
 
   def create
     create! do |format|
-      @jumper.move_to_top
       format.html do
         if request.xhr?
           @jumper.save!
