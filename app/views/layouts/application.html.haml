@@ -23,6 +23,7 @@
       .button
         =link_to "List All", randomizers_path
       .button
-        =link_to "Random", randomizer_path(Randomizer.find_by_id(rand(Randomizer.count)+Randomizer.first.id))
+        - randomizr = Randomizer.find_by_id(rand(Randomizer.count)+Randomizer.first.id) || Randomizer.last
+        =link_to "Random", randomizer_path(randomizr)
   %section.content
     = yield
