@@ -37,9 +37,7 @@
                 });
             $('li form').live({
                 "ajax:beforeSend": function(evt, xhr, settings) {
-                    if (xhr.status == "200") {
-                         $(this).closest('div.jumper').find('.loading').css('display', 'inline-block');
-                    }
+                   $(this).closest('div.jumper').find('.loading').css('display', 'inline-block');
                 },
                 "ajax:success": function(evt, data, status, xhr) {
                    if (xhr.status == "200") {
