@@ -12,7 +12,7 @@
                     $('#new_jumper .loading').hide();
                     $('#new_jumper #jumper_submit').show();
                     var newjumper = $(xhr.responseText);
-                    $('#jumpers').prepend(newjumper);
+                    $('#jumpers').append(newjumper);
                     $('#jumpers').sortable("refresh");
                     newjumper.find(".jumper").parent().parent().effect("highlight", {}, 800);
                     $('#jumper_name').val("").focus();
