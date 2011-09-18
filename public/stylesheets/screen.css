@@ -236,10 +236,14 @@ body .footer {
   clear: both;
 }
 /* line 107, ../../app/stylesheets/screen.scss */
-body .submit, body .loading, body .input {
+body .submit, body .input {
   display: inline-block;
 }
 /* line 110, ../../app/stylesheets/screen.scss */
 body .loading {
   display: none;
+}
+/* line 113, ../../app/stylesheets/screen.scss */
+body .created {
+  margin-bottom: 20px;
 }

@@ -104,10 +104,13 @@ body {
     .footer {
         clear: both;
     }
-    .submit, .loading, .input {
+    .submit, .input {
         display: inline-block;
     }
     .loading {
         display: none;
+    }
+    .created {
+        margin-bottom: 20px;
     }
 }

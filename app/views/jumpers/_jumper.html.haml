@@ -1,12 +1,25 @@
 %li{:id => "jumper_#{jumper.id}"}
   .jumper
-    = simple_form_for [jumper.randomizer, jumper], :remote => true do |f|
-      .content
-        = f.input :name, :class => "jumper_name", :label => false
-        = link_to "delete", randomizer_jumper_path(jumper.randomizer, jumper), :method => "delete", :confirm => "Are you sure?", :class => "delete_jumper", :remote => "true"
+    - case jumper.jumper_type
+    - when "text"
+      = simple_form_for [jumper.randomizer, jumper], :remote => true do |f|
+        .content
+          = f.input :name, :class => "jumper_name", :label => false
+          .actions
+            = link_to "Delete", randomizer_jumper_path(jumper.randomizer, jumper), :method => "delete", :confirm => "Are you sure?", :class => "delete_jumper", :remote => "true"
+        .text
+          = f.input :text, :label => false
         .loading
           = image_tag "loading.gif"
-      .text
-        = f.input :text, :label => false
-      .submit
-        = f.submit "save"
+        .submit
+          = f.submit "save"
+    - when "embedded"
+      .content
+        %h2.output_embedded{:id => "embed_#{jumper.id}"}
+          = "#{jumper.embedded.name}:"
+          = link_to jumper.embedded.randomize, jumper.embedded
+        .actions
+          = link_to "Delete", randomizer_jumper_path(jumper.randomizer, jumper), :method => "delete", :confirm => "Are you sure?", :class => "delete_jumper", :remote => "true"
+          = link_to "Refresh", randomizer_path(jumper.embedded, :format => :json), :remote => "true", :class => "refresh_embedded", :id => "refresh_#{jumper.id}"
+        .loading
+          = image_tag "loading.gif"

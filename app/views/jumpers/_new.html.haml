@@ -1,6 +1,5 @@
 %h2 Add Jumpers
-
-= simple_form_for [randomizer, Jumper.new(:randomizer => randomizer)], :remote => true, :validate => true do |f|
+= simple_form_for [randomizer, Jumper.new], :remote => true, :validate => true do |f|
   = render :partial => "jumpers/form", :locals => {:f => f, :randomizer => randomizer}
   .loading
     = image_tag "loading.gif"

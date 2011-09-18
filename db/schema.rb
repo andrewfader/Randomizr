@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110918080208) do
+ActiveRecord::Schema.define(:version => 20110918200757) do
 
   create_table "jumpers", :force => true do |t|
     t.datetime "created_at"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20110918080208) do
     t.integer  "position"
     t.integer  "randomizer_id"
     t.text     "text"
+    t.string   "jumper_type"
+    t.integer  "embedded_id"
   end
 
   create_table "randomizers", :force => true do |t|

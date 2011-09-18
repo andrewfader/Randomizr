@@ -2,15 +2,15 @@
     $(document)
         .bind("application:ready", function() {
 
-            $('#new_jumper')
+            $('.add form.jumper')
                 .bind("ajax:beforeSend", function (evt, xhr, settings) {
-                    $('#new_jumper .loading').css('display', 'inline-block');
-                    $('#new_jumper #jumper_submit').hide();
+                    $(this).find('.loading').css('display', 'inline-block');
+                    $(this).find('#jumper_submit').hide();
                 })
 
                 .bind("ajax:success", function (evt, data, status, xhr) {
-                    $('#new_jumper .loading').hide();
-                    $('#new_jumper #jumper_submit').show();
+                    $(this).find('.loading').hide();
+                    $(this).find('#jumper_submit').show();
                     var newjumper = $(xhr.responseText);
                     $('#jumpers').append(newjumper);
                     $('#jumpers').sortable("refresh");
@@ -35,14 +35,18 @@
                         });
                     }
                 });
+
             $('li form').live({
                 "ajax:beforeSend": function(evt, xhr, settings) {
-                   $(this).closest('div.jumper').find('.loading').css('display', 'inline-block');
+                    jumper = $(this).closest('div.jumper');
+                    jumper.find('.loading').css('display', 'inline-block');
+                    jumper.find('.submit').hide();
                 },
                 "ajax:success": function(evt, data, status, xhr) {
-                   if (xhr.status == "200") {
+                    if (xhr.status == "200") {
                         var jumper = $(this).closest("div.jumper");
                         jumper.find('.loading').hide();
+                        jumper.find('.submit').show();
                         jumper.parent().effect("highlight", {}, 1337);
                     }
                 }
@@ -59,6 +63,14 @@
                 "ajax:success": function(evt, data, status, xhr) {
                     $('h2.output').text(JSON.parse(xhr.responseText).randomizer)
                 }
-            })
+            });
+
+            $('.refresh_embedded').live({
+                "ajax:success": function(evt, data, status, xhr) {
+                    var id = $(this).attr("id").split("_")[1];
+                    console.log($(this).attr("id"));
+                    $('h2.output_embedded#embed_' + id).find("a").text(JSON.parse(xhr.responseText).randomizer)
+                }
+            });
         });
 })(jQuery);
