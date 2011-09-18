@@ -8,7 +8,7 @@ class RandomizersController < InheritedResources::Base
   end
 
   def create
-    create! { @randomizer }
+    create! { edit_randomizer_path(@randomizer) }
   end
 
   def destroy

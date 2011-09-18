@@ -1,3 +1,13 @@
+%h2.name
+  = "#{@randomizer.name}: "
+%h2.output
+  = @randomizer.randomize
+.created
+  Created by #{@randomizer.user.email}
+.actions
+  = link_to "Show", randomizer_path(@randomizer)
+  = link_to "Delete", randomizer_path(@randomizer), :method => "delete", :confirm => "Are you sure?"
+  = link_to "Refresh", randomizer_path(@randomizer, :format => :json), :remote => "true", :class => "refresh"
 = simple_form_for @randomizer do |form|
   = render "form", :form => form
 
