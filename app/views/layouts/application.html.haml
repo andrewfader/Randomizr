@@ -18,5 +18,11 @@
     - else
       .button
         =link_to "Log Out", destroy_user_session_path
+      .button
+        =link_to "Create New", new_randomizer_path
+      .button
+        =link_to "List All", randomizers_path
+      .button
+        =link_to "Random", randomizer_path(Randomizer.find_by_id(rand(Randomizer.count)+Randomizer.first.id))
   %section.content
     = yield
