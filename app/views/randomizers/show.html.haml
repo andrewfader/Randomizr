@@ -2,7 +2,8 @@
   = "#{@randomizer.name}: "
 %h2.output
   = @randomizer.randomize
-Created #{@randomizer.created_at ? @randomizer.created_at : "a long time ago"} by #{@randomizer.user.email}
+.created
+  Created by #{@randomizer.user.email}
 .actions
   = link_to "Edit", edit_randomizer_path(@randomizer)
   = link_to "Delete", randomizer_path(@randomizer), :method => "delete", :confirm => "Are you sure?"
