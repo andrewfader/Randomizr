@@ -1,0 +1,5 @@
+.name
+  = @randomizer.name
+  .actions
+    = link_to "Edit", edit_randomizer_path(@randomizer)
+    = link_to "Delete", randomizer_path(@randomizer), :method => "delete", :confirm => "Are you sure?"

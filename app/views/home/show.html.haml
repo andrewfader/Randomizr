@@ -1,4 +1,18 @@
 - if current_user
-  = "Hello #{current_user}"
+  = "Hello #{current_user.email}!"
+  .randomizrs
+    - if current_user.randomizers.present?
+      ="You have created #{pluralize(current_user.randomizers.count, "randomizer")}."
+      %ul
+        - current_user.randomizers.each do |randomizer|
+          %li
+            = link_to randomizer.name, randomizer
+    - else
+      You haven't created any randomizers!
+    .create
+    = link_to "Create a new randomizer", new_randomizer_path
+
 - else
-  Hello World!
+  Welcome to Randomizr!
+  =link_to "Register", new_user_registration_path
+  to begin creating randomizers.
