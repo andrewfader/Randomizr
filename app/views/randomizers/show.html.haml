@@ -1,14 +1,17 @@
-.name
-  = @randomizer.name
-  .actions
-    = link_to "Edit", edit_randomizer_path(@randomizer)
-    = link_to "Delete", randomizer_path(@randomizer), :method => "delete", :confirm => "Are you sure?"    
-  #jumper
-    .add
-      - if current_user
-        = render "jumpers/new", :jumper => Jumper.new(:randomizer => @randomizer)
-      .jumpers
-        %ul#jumpers
-          - @randomizer.jumpers.sort_by{|jumper| jumper.position}.each do |jumper|
+%h2.name
+  = "#{@randomizer.name}: "
+%h2.output
+  = @randomizer.randomize
+.actions
+  = link_to "Edit", edit_randomizer_path(@randomizer)
+  = link_to "Delete", randomizer_path(@randomizer), :method => "delete", :confirm => "Are you sure?"
+  = link_to "Refresh", randomizer_path(@randomizer, :format => :json), :remote => "true", :class => "refresh"
+#jumper
+  .add
+    = render "jumpers/new", :randomizer => @randomizer
+    .jumpers
+      %ul#jumpers
+        - if @randomizer.jumpers.present?
+          - @randomizer.jumpers.sort_by{|jumper| jumper.position || 0}.each do |jumper|
             = render jumper
-  .footer
+.footer

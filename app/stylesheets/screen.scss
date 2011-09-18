@@ -45,6 +45,33 @@ body {
        border: 1px outset #999;
        @include border-radius(10px);
        @include single-box-shadow;
+       h2 {
+          display: inline-block;
+          font-size: 1.7em;
+          margin-bottom: 10px;
+       }
+       h2.output {
+        font-size: 2em;
+        color: navy;
+       }
+       .actions {
+           float: right;
+           display: inline-block;
+           a {
+               padding: 5px;
+               @include background-image(linear-gradient(color-stops($color, black)));
+               @include border-radius(4px, 4px);
+               border: 1px gray inset;
+               display: inline-block;
+               text-decoration: none;
+               &:link, &:visited {
+                   color: white;
+               }
+               &:hover {
+                    color: silver;
+               }
+           }
+       }
     }
     .jumpers {
         margin-top: 25px;
@@ -53,16 +80,34 @@ body {
             margin: 5px;
             display: inline-block;
             list-style-type: none;
+            border: 1px gray inset;
+            @include border-radius(4px, 4px);
+            @include background-image(radial-gradient(color-stops(lighten($color, 50%), lighten($color, 30%)), 50px 50%));
             .jumper {
-                width: 200px;
-                height: 100px;
-                @include border-radius(4px, 4px);
-                @include background-image(radial-gradient(color-stops(lighten($color, 50%), lighten($color, 30%)), 50px 50%));
-                border: 1px gray inset;
+                width: 210px;
+                height: 170px;
+                textarea {
+                    width: 180px;
+                    height: 110px;
+                }
+                .content {
+                    input {
+                        width: 140px;
+                    }
+                    input, a {
+                        display: inline-block;
+                    }
+                }
             }
         }
     }
     .footer {
-            clear: both;
+        clear: both;
+    }
+    .submit, .loading, .input {
+        display: inline-block;
+    }
+    .loading {
+        display: none;
     }
 }

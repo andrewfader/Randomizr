@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110918025741) do
     t.string   "name"
     t.integer  "position"
     t.integer  "randomizer_id"
+    t.text     "text"
   end
 
   create_table "randomizers", :force => true do |t|

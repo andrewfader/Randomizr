@@ -8,7 +8,7 @@ class RandomizersController < InheritedResources::Base
   end
 
   def create
-    create! { "/" }
+    create! { @randomizer }
   end
 
   def destroy
@@ -17,10 +17,18 @@ class RandomizersController < InheritedResources::Base
 
   def jumpers_sort
     @randomizer.jumpers.each do |jumper|
-      jumper.position = params['li_jumper'].index(jumper.id.to_s) + 1
+      jumper.position = params['jumper'].index(jumper.id.to_s) + 1
       jumper.save!
     end
     head :ok
   end
 
+  def show
+    show! do |format|
+      format.html
+      format.json do
+        render :partial => "randomizers/show.json"
+      end
+    end
+  end
 end

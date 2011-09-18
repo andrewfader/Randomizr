@@ -2,9 +2,7 @@ class JumpersController < InheritedResources::Base
   respond_to :html, :xml, :json
   actions :all
 
-  before_filter do
-    @jumper = Jumper.find_by_id(params[:id])
-  end
+  before_filter :find_jumper, :except => :create
 
   def create
     create! do |format|
@@ -36,11 +34,19 @@ class JumpersController < InheritedResources::Base
     destroy! do |format|
       format.html do
         if request.xhr?
-          head :ok
+          head :no_content
         else
           redirect_to @randomizer
         end
       end
     end
   end
+
+  private
+
+  def find_jumper
+    @jumper = Jumper.find(params[:id])
+    @randomizer = @jumper.randomizer || Randomizer.find_by_id(params[:randomizer_id])
+  end
+
 end

@@ -1,2 +1,4 @@
+%ul
 - Randomizer.all.each do |randomizer|
-  = randomizer.name
+  %li
+    = link_to randomizer.name, @randomizer

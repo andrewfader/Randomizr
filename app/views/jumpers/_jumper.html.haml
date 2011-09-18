@@ -1,5 +1,12 @@
-%li{:id => "li_jumper_#{jumper.id}"}
+%li{:id => "jumper_#{jumper.id}"}
   .jumper
-    .content{:id => "jumper_#{jumper.id}"}
-      = jumper.name
-    .loading
+    = simple_form_for [jumper.randomizer, jumper], :remote => true do |f|
+      .content
+        = f.input :name, :class => "jumper_name", :label => false
+        = link_to "delete", randomizer_jumper_path(jumper.randomizer, jumper), :method => "delete", :confirm => "Are you sure?", :class => "delete_jumper", :remote => "true"
+        .loading
+          = image_tag "loading.gif"
+      .text
+        = f.input :text, :label => false
+      .submit
+        = f.submit "save"
