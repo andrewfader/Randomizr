@@ -3,11 +3,12 @@
   .actions
     = link_to "Edit", edit_randomizer_path(@randomizer)
     = link_to "Delete", randomizer_path(@randomizer), :method => "delete", :confirm => "Are you sure?"    
-    #jumper
-      .add
-        - if current_user
-          = render "jumpers/new", :jumper => Jumper.new(:randomizer => @randomizer)
-        .jumpers
-          %ul#jumpers
-            - @randomizer.jumpers.each do |jumper|
-              = render jumper
+  #jumper
+    .add
+      - if current_user
+        = render "jumpers/new", :jumper => Jumper.new(:randomizer => @randomizer)
+      .jumpers
+        %ul#jumpers
+          - @randomizer.jumpers.sort_by{|jumper| jumper.position}.each do |jumper|
+            = render jumper
+  .footer

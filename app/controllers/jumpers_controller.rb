@@ -1,5 +1,6 @@
 class JumpersController < InheritedResources::Base
   respond_to :html, :xml, :json
+  actions :all
 
   before_filter do
     @jumper = Jumper.find_by_id(params[:id])

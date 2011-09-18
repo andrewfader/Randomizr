@@ -1,5 +1,5 @@
 class RandomizersController < InheritedResources::Base
-  respond_to :html
+  respond_to :html, :json
   layout 'application'
   actions :all
 
@@ -18,7 +18,7 @@ class RandomizersController < InheritedResources::Base
   def jumpers_sort
     @randomizer.jumpers.each do |jumper|
       jumper.position = params['li_jumper'].index(jumper.id.to_s) + 1
-      jumper.save
+      jumper.save!
     end
     head :ok
   end

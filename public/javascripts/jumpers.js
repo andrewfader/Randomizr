@@ -21,12 +21,12 @@
 
             $('ul#jumpers')
                 .sortable({
-                    axis: 'y',
-                    dropOnEmpty:false,
+                    dropOnEmpty: false,
+                    zIndex: 5,
                     cursor: 'move',
                     items: 'li',
-                    opacity: 0.4,
-                    scroll: true,
+                    opacity: 1,
+                    scroll: false,
                     update: function() {
                         $.ajax({
                             type: 'post',
@@ -45,7 +45,7 @@
         },
 
         "ajax:success": function() {
-            spinner.stop;
+            spinner.stop();
             var jumper = $(this).closest("div.jumper");
             var content = jumper.find(".content");
             content.effect("highlight", {}, 1337);
