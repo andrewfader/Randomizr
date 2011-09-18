@@ -1,2 +1,31 @@
 = simple_form_for @randomizer do |form|
   = render "form", :form => form
+
+#jumper
+  .add
+    %h2 Add Jumpers
+
+    = simple_form_for [@randomizer, Jumper.new], :remote => true, :validate => true do |f|
+      = f.input :name
+      = f.input :randomizer_id, :as => :hidden, :input_html => {:value => @randomizer.id}
+      = f.input :jumper_type, :as => :hidden, :input_html => {:value => "text"}
+      .loading
+        = image_tag "loading.gif"
+      .submit
+        = f.submit 'add'
+
+    = simple_form_for [@randomizer, Jumper.new], :remote => true, :validate => true do |f|
+      = f.input :jumper_type, :as => :hidden, :input_html => {:value => "embedded"}
+      = f.input :randomizer_id, :as => :hidden, :input_html => {:value => @randomizer.id}
+      - collection = Randomizer.all.reject{|randomizer| randomizer.id == @randomizer.id}
+      = f.input :embedded_id, :collection => collection, :include_blank => false, :input_html => {:value => collection.first}
+      .loading
+        = image_tag "loading.gif"
+      .submit
+        = f.submit "add"
+  .jumpers
+    %ul#jumpers
+      - if @randomizer.jumpers.present?
+        - @randomizer.jumpers.sort_by{|jumper| jumper.position || 0}.each do |jumper|
+          = render jumper
+.footer

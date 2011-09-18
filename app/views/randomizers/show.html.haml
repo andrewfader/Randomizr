@@ -8,24 +8,5 @@
   = link_to "Edit", edit_randomizer_path(@randomizer)
   = link_to "Delete", randomizer_path(@randomizer), :method => "delete", :confirm => "Are you sure?"
   = link_to "Refresh", randomizer_path(@randomizer, :format => :json), :remote => "true", :class => "refresh"
-#jumper
-  .add
-    = render "jumpers/new", :randomizer => @randomizer
-  .add
-    = simple_form_for [@randomizer, Jumper.new], :remote => :true do |f|
-      = f.input :jumper_type, :as => :hidden, :input_html => {:value => "embedded"}
-      = f.input :randomizer_id, :as => :hidden, :input_html => {:value => @randomizer.id}
-      - collection = Randomizer.all.reject{|randomizer| randomizer.id == @randomizer.id}
-      = f.input :embedded_id, :collection => collection, :include_blank => false, :input_html => {:value => collection.first}
-      .loading
-        = image_tag "loading.gif"
-      .submit
-        = f.submit "add"
-  .jumpers
-    %ul#jumpers
-      - if @randomizer.jumpers.present?
-        - @randomizer.jumpers.sort_by{|jumper| jumper.position || 0}.each do |jumper|
-          = render jumper
-.footer
 
 

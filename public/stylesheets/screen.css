@@ -213,37 +213,37 @@ body .jumpers ul#jumpers li {
   background-image: -ms-radial-gradient(50px 50%, #e6effa, #93b7e7);
   background-image: radial-gradient(50px 50%, #e6effa, #93b7e7);
 }
-/* line 86, ../../app/stylesheets/screen.scss */
+/* line 87, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper {
   width: 210px;
   height: 170px;
 }
-/* line 89, ../../app/stylesheets/screen.scss */
+/* line 90, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper textarea {
   width: 180px;
   height: 110px;
 }
-/* line 94, ../../app/stylesheets/screen.scss */
+/* line 95, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper .content input {
   width: 140px;
 }
-/* line 97, ../../app/stylesheets/screen.scss */
+/* line 98, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper .content input, body .jumpers ul#jumpers li .jumper .content a {
   display: inline-block;
 }
-/* line 104, ../../app/stylesheets/screen.scss */
+/* line 105, ../../app/stylesheets/screen.scss */
 body .footer {
   clear: both;
 }
-/* line 107, ../../app/stylesheets/screen.scss */
+/* line 108, ../../app/stylesheets/screen.scss */
 body .submit, body .input {
   display: inline-block;
 }
-/* line 110, ../../app/stylesheets/screen.scss */
+/* line 111, ../../app/stylesheets/screen.scss */
 body .loading {
   display: none;
 }
-/* line 113, ../../app/stylesheets/screen.scss */
+/* line 114, ../../app/stylesheets/screen.scss */
 body .created {
   margin-bottom: 20px;
 }

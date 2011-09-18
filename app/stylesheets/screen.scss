@@ -83,6 +83,7 @@ body {
             border: 1px gray inset;
             @include border-radius(4px, 4px);
             @include background-image(radial-gradient(color-stops(lighten($color, 50%), lighten($color, 30%)), 50px 50%));
+
             .jumper {
                 width: 210px;
                 height: 170px;

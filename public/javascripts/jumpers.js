@@ -72,5 +72,9 @@
                     $('h2.output_embedded#embed_' + id).find("a").text(JSON.parse(xhr.responseText).randomizer)
                 }
             });
+
+            $('li .jumper').live({
+                "blur": f
+            })
         });
 })(jQuery);
