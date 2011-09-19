@@ -157,7 +157,7 @@ body section.content h2 {
 /* line 55, ../../app/stylesheets/screen.scss */
 body section.content h2.output {
   font-size: 2em;
-  color: navy;
+  /*color: navy;*/
 }
 /* line 59, ../../app/stylesheets/screen.scss */
 body section.content .actions {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110918200757) do
+ActiveRecord::Schema.define(:version => 20110919002735) do
 
   create_table "jumpers", :force => true do |t|
     t.datetime "created_at"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20110918200757) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "background_color"
+    t.string   "font_color"
   end
 
   create_table "users", :force => true do |t|

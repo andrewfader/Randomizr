@@ -1,4 +1,9 @@
 = javascript_tag "$('.page_title').text('#{@randomizer.name}, by #{@randomizer.user.email}');"
+= javascript_tag "var backgroundColor = false;"
+= javascript_tag "backgroundColor = '#{@randomizer.background_color}';" if @randomizer.background_color.present?
+= javascript_tag "var fontColor = false;"
+= javascript_tag "fontColor = '#{@randomizer.font_color}';" if @randomizer.font_color.present?
+
 %h2.output
   = @randomizer.randomize
 .actions

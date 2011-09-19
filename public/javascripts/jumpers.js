@@ -1,7 +1,6 @@
 (function($) {
     $(document)
         .bind("application:ready", function() {
-
             $('.add form.jumper')
                 .bind("ajax:beforeSend", function (evt, xhr, settings) {
                     $(this).find('.loading').css('display', 'inline-block');
@@ -74,7 +73,9 @@
             });
 
             $('li .jumper').live({
-                "blur": f
-            })
+                "blur": function() {
+                    $(this).parent().find('form').submit();
+                }
+            });
         });
 })(jQuery);
