@@ -3,17 +3,17 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
 @import "compass/css3/gradient";
 @import "compass/css3/border-radius";
 @import "compass/css3/box-shadow";
 
 body {
+    margin:0;
     font-family: Calibri, Helvetica Neue, Tahoma;
     $color: #2966B8;
     background-color: $color;
     header {
-        min-height: 77px;
+        min-height: 42px;
         @include background-image(linear-gradient(color-stops(gray, $color)));
         img {
             display: inline-block;
@@ -40,6 +40,9 @@ body {
         border: 1px gray inset;
     }
     section.content {
+       .page {
+              clear: both;
+       }
        @include background-image(linear-gradient(color-stops(white, lighten($color, 10%))));
        margin: 15px;
        padding: 10px;
@@ -48,13 +51,12 @@ body {
        @include border-radius(10px);
        @include single-box-shadow;
        h2 {
+          margin-top: 0;
           display: inline-block;
           font-size: 1.7em;
-          margin-bottom: 10px;
        }
        h2.output {
         font-size: 2em;
-        /*color: navy;*/
        }
        .actions {
            float: right;
@@ -121,7 +123,7 @@ body {
         vertical-align: bottom;
         color: white;
         font-size: 1.5em;
-        top: 40px;
+        top: 25px;
         left: 315px;
         position: absolute;
     }

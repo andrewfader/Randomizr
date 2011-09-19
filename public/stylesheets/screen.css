@@ -2,79 +2,15 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* line 10, ../../app/stylesheets/screen.scss */
+body {
   margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* line 20, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-body {
-  line-height: 1;
-}
-
-/* line 22, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 24, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 26, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 28, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 101, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 30, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 114, ../../../InstantRhodes/ruby/lib/ruby/gems/1.8/gems/compass-0.11.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
-/* line 11, ../../app/stylesheets/screen.scss */
-body {
   font-family: Calibri, Helvetica Neue, Tahoma;
   background-color: #2966b8;
 }
 /* line 15, ../../app/stylesheets/screen.scss */
 body header {
-  min-height: 77px;
+  min-height: 42px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #808080), color-stop(100%, #2966b8));
   background-image: -webkit-linear-gradient(#808080, #2966b8);
   background-image: -moz-linear-gradient(#808080, #2966b8);
@@ -148,23 +84,26 @@ body section.content {
   -o-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
 }
-/* line 50, ../../app/stylesheets/screen.scss */
+/* line 43, ../../app/stylesheets/screen.scss */
+body section.content .page {
+  clear: both;
+}
+/* line 53, ../../app/stylesheets/screen.scss */
 body section.content h2 {
+  margin-top: 0;
   display: inline-block;
   font-size: 1.7em;
-  margin-bottom: 10px;
 }
-/* line 55, ../../app/stylesheets/screen.scss */
+/* line 58, ../../app/stylesheets/screen.scss */
 body section.content h2.output {
   font-size: 2em;
-  /*color: navy;*/
 }
-/* line 59, ../../app/stylesheets/screen.scss */
+/* line 61, ../../app/stylesheets/screen.scss */
 body section.content .actions {
   float: right;
   display: inline-block;
 }
-/* line 62, ../../app/stylesheets/screen.scss */
+/* line 64, ../../app/stylesheets/screen.scss */
 body section.content .actions a {
   padding: 5px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2966b8), color-stop(100%, #000000));
@@ -183,19 +122,19 @@ body section.content .actions a {
   display: inline-block;
   text-decoration: none;
 }
-/* line 69, ../../app/stylesheets/screen.scss */
+/* line 71, ../../app/stylesheets/screen.scss */
 body section.content .actions a:link, body section.content .actions a:visited {
   color: white;
 }
-/* line 72, ../../app/stylesheets/screen.scss */
+/* line 74, ../../app/stylesheets/screen.scss */
 body section.content .actions a:hover {
   color: silver;
 }
-/* line 78, ../../app/stylesheets/screen.scss */
+/* line 80, ../../app/stylesheets/screen.scss */
 body .jumpers {
   margin-top: 25px;
 }
-/* line 80, ../../app/stylesheets/screen.scss */
+/* line 82, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li {
   float: left;
   margin: 5px;
@@ -215,47 +154,47 @@ body .jumpers ul#jumpers li {
   background-image: -ms-radial-gradient(50px 50%, #e6effa, #93b7e7);
   background-image: radial-gradient(50px 50%, #e6effa, #93b7e7);
 }
-/* line 89, ../../app/stylesheets/screen.scss */
+/* line 91, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper {
   width: 210px;
   height: 170px;
 }
-/* line 92, ../../app/stylesheets/screen.scss */
+/* line 94, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper textarea {
   width: 180px;
   height: 110px;
 }
-/* line 97, ../../app/stylesheets/screen.scss */
+/* line 99, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper .content input {
   width: 140px;
 }
-/* line 100, ../../app/stylesheets/screen.scss */
+/* line 102, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper .content input, body .jumpers ul#jumpers li .jumper .content a {
   display: inline-block;
 }
-/* line 107, ../../app/stylesheets/screen.scss */
+/* line 109, ../../app/stylesheets/screen.scss */
 body .footer {
   clear: both;
 }
-/* line 110, ../../app/stylesheets/screen.scss */
+/* line 112, ../../app/stylesheets/screen.scss */
 body .submit, body .input {
   display: inline-block;
 }
-/* line 113, ../../app/stylesheets/screen.scss */
+/* line 115, ../../app/stylesheets/screen.scss */
 body .loading {
   display: none;
 }
-/* line 116, ../../app/stylesheets/screen.scss */
+/* line 118, ../../app/stylesheets/screen.scss */
 body .created {
   margin-bottom: 20px;
 }
-/* line 119, ../../app/stylesheets/screen.scss */
+/* line 121, ../../app/stylesheets/screen.scss */
 body .page_title {
   display: inline-block;
   vertical-align: bottom;
   color: white;
   font-size: 1.5em;
-  top: 40px;
+  top: 25px;
   left: 315px;
   position: absolute;
 }

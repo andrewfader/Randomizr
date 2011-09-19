@@ -28,4 +28,5 @@
         - randomizr = Randomizer.find_by_id(rand(Randomizer.count)+Randomizer.first.id) || Randomizer.last
         =link_to "Random", randomizer_path(randomizr)
   %section.content
-    = yield
+    .page
+      = yield
