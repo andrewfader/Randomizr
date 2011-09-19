@@ -20,8 +20,22 @@ body {
             float: left;
         }
     }
+    a {
+        &:link {
+            color: blue;
+        };
+        &:visited {
+            color: navy;
+        }
+        &:hover {
+            color: cyan;
+        }
+    }
     footer {
-       @include background-image(linear-gradient(color-stops($color, gray)));
+       clear: both;
+       width: 100%;
+       text-align: center;
+       color: white;
     }
     .button {
         float: right;
