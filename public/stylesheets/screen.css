@@ -161,40 +161,41 @@ body .jumpers ul#jumpers li .jumper {
 }
 /* line 94, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper textarea {
-  width: 180px;
-  height: 110px;
+  width: 200px;
+  height: 128px;
+  margin: 0;
 }
-/* line 99, ../../app/stylesheets/screen.scss */
+/* line 100, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper .content input {
   width: 140px;
 }
-/* line 102, ../../app/stylesheets/screen.scss */
+/* line 103, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper .content input, body .jumpers ul#jumpers li .jumper .content a {
   display: inline-block;
 }
-/* line 109, ../../app/stylesheets/screen.scss */
+/* line 110, ../../app/stylesheets/screen.scss */
 body .footer {
   clear: both;
 }
-/* line 112, ../../app/stylesheets/screen.scss */
+/* line 113, ../../app/stylesheets/screen.scss */
 body .submit, body .input {
   display: inline-block;
 }
-/* line 115, ../../app/stylesheets/screen.scss */
+/* line 116, ../../app/stylesheets/screen.scss */
 body .loading {
   display: none;
 }
-/* line 118, ../../app/stylesheets/screen.scss */
+/* line 119, ../../app/stylesheets/screen.scss */
 body .created {
   margin-bottom: 20px;
 }
-/* line 121, ../../app/stylesheets/screen.scss */
+/* line 122, ../../app/stylesheets/screen.scss */
 body .page_title {
   display: inline-block;
   vertical-align: bottom;
   color: white;
   font-size: 1.3em;
-  top: 25px;
+  top: 32px;
   left: 315px;
   position: absolute;
 }

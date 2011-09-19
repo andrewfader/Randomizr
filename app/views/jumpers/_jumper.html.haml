@@ -11,8 +11,6 @@
           = f.input :text, :label => false
         .loading
           = image_tag "loading.gif"
-        .submit
-          = f.submit "save"
     - when "embedded"
       .content
         %h2.output_embedded{:id => "embed_#{jumper.id}"}

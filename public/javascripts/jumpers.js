@@ -39,14 +39,12 @@
                 "ajax:beforeSend": function(evt, xhr, settings) {
                     jumper = $(this).closest('div.jumper');
                     jumper.find('.loading').css('display', 'inline-block');
-                    jumper.find('.submit').hide();
                 },
                 "ajax:success": function(evt, data, status, xhr) {
                     if (xhr.status == "200") {
                         var jumper = $(this).closest("div.jumper");
                         jumper.find('.loading').hide();
-                        jumper.find('.submit').show();
-                        jumper.parent().effect("highlight", {}, 1337);
+                        jumper.parent().effect("highlight");
                     }
                 }
             });
