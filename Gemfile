@@ -20,6 +20,7 @@ gem 'carrierwave'
 gem "cancan"
 gem "heroku"
 gem "acts_as_list", :git => "https://github.com/swanandp/acts_as_list.git"
+gem "capistrano"
 
 group :development, :test do
   gem 'sqlite3'

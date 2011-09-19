@@ -1,9 +1,6 @@
-%h2.name
-  = "#{@randomizer.name}: "
+= javascript_tag "$('.page_title').text('#{@randomizer.name}, by #{@randomizer.user.email}');"
 %h2.output
   = @randomizer.randomize
-.created
-  Created by #{@randomizer.user.email}
 .actions
   - if current_user
     = link_to "Edit", edit_randomizer_path(@randomizer)

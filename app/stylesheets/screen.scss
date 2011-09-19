@@ -13,9 +13,11 @@ body {
     $color: #2966B8;
     background-color: $color;
     header {
+        min-height: 77px;
         @include background-image(linear-gradient(color-stops(gray, $color)));
         img {
             display: inline-block;
+            float: left;
         }
     }
     footer {
@@ -113,5 +115,14 @@ body {
     }
     .created {
         margin-bottom: 20px;
+    }
+    .page_title {
+        display: inline-block;
+        vertical-align: bottom;
+        color: white;
+        font-size: 1.5em;
+        top: 40px;
+        left: 315px;
+        position: absolute;
     }
 }

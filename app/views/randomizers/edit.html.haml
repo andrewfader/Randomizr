@@ -1,5 +1,4 @@
-%h2.name
-  = "#{@randomizer.name}: "
+= javascript_tag "$('.page_title').text('Edit #{@randomizer.name}');"
 %h2.output
   = @randomizer.randomize
 .created
@@ -13,8 +12,8 @@
 
 #jumper
   .add
-    %h2 Add Jumpers
-
+    %h2 Jumpers
+    Drag to reorder.
     = simple_form_for [@randomizer, Jumper.new], :remote => true, :validate => true do |f|
       = f.input :name
       = f.input :randomizer_id, :as => :hidden, :input_html => {:value => @randomizer.id}
@@ -22,7 +21,7 @@
       .loading
         = image_tag "loading.gif"
       .submit
-        = f.submit 'add'
+        = f.submit 'add Jumper'
 
     = simple_form_for [@randomizer, Jumper.new], :remote => true, :validate => true do |f|
       = f.input :jumper_type, :as => :hidden, :input_html => {:value => "embedded"}
@@ -32,7 +31,7 @@
       .loading
         = image_tag "loading.gif"
       .submit
-        = f.submit "add"
+        = f.submit "add Jumper"
   .jumpers
     %ul#jumpers
       - if @randomizer.jumpers.present?

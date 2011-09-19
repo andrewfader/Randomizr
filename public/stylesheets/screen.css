@@ -74,6 +74,7 @@ body {
 }
 /* line 15, ../../app/stylesheets/screen.scss */
 body header {
+  min-height: 77px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #808080), color-stop(100%, #2966b8));
   background-image: -webkit-linear-gradient(#808080, #2966b8);
   background-image: -moz-linear-gradient(#808080, #2966b8);
@@ -81,11 +82,12 @@ body header {
   background-image: -ms-linear-gradient(#808080, #2966b8);
   background-image: linear-gradient(#808080, #2966b8);
 }
-/* line 17, ../../app/stylesheets/screen.scss */
+/* line 18, ../../app/stylesheets/screen.scss */
 body header img {
   display: inline-block;
+  float: left;
 }
-/* line 21, ../../app/stylesheets/screen.scss */
+/* line 23, ../../app/stylesheets/screen.scss */
 body footer {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2966b8), color-stop(100%, #808080));
   background-image: -webkit-linear-gradient(#2966b8, #808080);
@@ -94,7 +96,7 @@ body footer {
   background-image: -ms-linear-gradient(#2966b8, #808080);
   background-image: linear-gradient(#2966b8, #808080);
 }
-/* line 24, ../../app/stylesheets/screen.scss */
+/* line 26, ../../app/stylesheets/screen.scss */
 body .button {
   float: right;
   margin: 5px 5px 0 0;
@@ -114,16 +116,16 @@ body .button {
   border-radius: 4px / 4px;
   border: 1px gray inset;
 }
-/* line 29, ../../app/stylesheets/screen.scss */
+/* line 31, ../../app/stylesheets/screen.scss */
 body .button a {
   color: white;
   text-decoration: none;
 }
-/* line 32, ../../app/stylesheets/screen.scss */
+/* line 34, ../../app/stylesheets/screen.scss */
 body .button a:hover {
   color: silver;
 }
-/* line 40, ../../app/stylesheets/screen.scss */
+/* line 42, ../../app/stylesheets/screen.scss */
 body section.content {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #407fd4));
   background-image: -webkit-linear-gradient(#ffffff, #407fd4);
@@ -146,23 +148,23 @@ body section.content {
   -o-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
 }
-/* line 48, ../../app/stylesheets/screen.scss */
+/* line 50, ../../app/stylesheets/screen.scss */
 body section.content h2 {
   display: inline-block;
   font-size: 1.7em;
   margin-bottom: 10px;
 }
-/* line 53, ../../app/stylesheets/screen.scss */
+/* line 55, ../../app/stylesheets/screen.scss */
 body section.content h2.output {
   font-size: 2em;
   color: navy;
 }
-/* line 57, ../../app/stylesheets/screen.scss */
+/* line 59, ../../app/stylesheets/screen.scss */
 body section.content .actions {
   float: right;
   display: inline-block;
 }
-/* line 60, ../../app/stylesheets/screen.scss */
+/* line 62, ../../app/stylesheets/screen.scss */
 body section.content .actions a {
   padding: 5px;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2966b8), color-stop(100%, #000000));
@@ -181,19 +183,19 @@ body section.content .actions a {
   display: inline-block;
   text-decoration: none;
 }
-/* line 67, ../../app/stylesheets/screen.scss */
+/* line 69, ../../app/stylesheets/screen.scss */
 body section.content .actions a:link, body section.content .actions a:visited {
   color: white;
 }
-/* line 70, ../../app/stylesheets/screen.scss */
+/* line 72, ../../app/stylesheets/screen.scss */
 body section.content .actions a:hover {
   color: silver;
 }
-/* line 76, ../../app/stylesheets/screen.scss */
+/* line 78, ../../app/stylesheets/screen.scss */
 body .jumpers {
   margin-top: 25px;
 }
-/* line 78, ../../app/stylesheets/screen.scss */
+/* line 80, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li {
   float: left;
   margin: 5px;
@@ -213,37 +215,47 @@ body .jumpers ul#jumpers li {
   background-image: -ms-radial-gradient(50px 50%, #e6effa, #93b7e7);
   background-image: radial-gradient(50px 50%, #e6effa, #93b7e7);
 }
-/* line 87, ../../app/stylesheets/screen.scss */
+/* line 89, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper {
   width: 210px;
   height: 170px;
 }
-/* line 90, ../../app/stylesheets/screen.scss */
+/* line 92, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper textarea {
   width: 180px;
   height: 110px;
 }
-/* line 95, ../../app/stylesheets/screen.scss */
+/* line 97, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper .content input {
   width: 140px;
 }
-/* line 98, ../../app/stylesheets/screen.scss */
+/* line 100, ../../app/stylesheets/screen.scss */
 body .jumpers ul#jumpers li .jumper .content input, body .jumpers ul#jumpers li .jumper .content a {
   display: inline-block;
 }
-/* line 105, ../../app/stylesheets/screen.scss */
+/* line 107, ../../app/stylesheets/screen.scss */
 body .footer {
   clear: both;
 }
-/* line 108, ../../app/stylesheets/screen.scss */
+/* line 110, ../../app/stylesheets/screen.scss */
 body .submit, body .input {
   display: inline-block;
 }
-/* line 111, ../../app/stylesheets/screen.scss */
+/* line 113, ../../app/stylesheets/screen.scss */
 body .loading {
   display: none;
 }
-/* line 114, ../../app/stylesheets/screen.scss */
+/* line 116, ../../app/stylesheets/screen.scss */
 body .created {
   margin-bottom: 20px;
+}
+/* line 119, ../../app/stylesheets/screen.scss */
+body .page_title {
+  display: inline-block;
+  vertical-align: bottom;
+  color: white;
+  font-size: 1.5em;
+  top: 40px;
+  left: 315px;
+  position: absolute;
 }
