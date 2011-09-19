@@ -58,7 +58,7 @@
 
             $('.refresh').live({
                 "ajax:success": function(evt, data, status, xhr) {
-                    $('h2.output').text(JSON.parse(xhr.responseText).randomizer)
+                    $('h2.output').text($.parseJSON(xhr.responseText).randomizer);
                 }
             });
 
@@ -66,7 +66,7 @@
                 "ajax:success": function(evt, data, status, xhr) {
                     var id = $(this).attr("id").split("_")[1];
                     console.log($(this).attr("id"));
-                    $('h2.output_embedded#embed_' + id).find("a").text(JSON.parse(xhr.responseText).randomizer)
+                    $('h2.output_embedded#embed_' + id).find("a").text($.parseJSON(xhr.responseText).randomizer);
                 }
             });
 
@@ -75,5 +75,24 @@
                     $(this).parent().find('form').submit();
                 }
             });
+            var myId;
+            $('input#auto').live({
+                "change": function() {
+                    if ($(this).prop("checked")) {
+                        refreshOutput();
+                        myId = setInterval(function() {
+                            refreshOutput();
+                        }, 2000);
+                    }
+                    else {
+                        clearInterval(myId);
+                    }
+                }
+            })
+            function refreshOutput() {
+                $.getJSON(location.pathname.replace("/edit", "") + ".json", function(data) {
+                    $("h2.output").text(data.randomizer);
+                });
+            }
         });
 })(jQuery);

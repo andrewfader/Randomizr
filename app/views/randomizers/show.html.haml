@@ -11,5 +11,7 @@
     = link_to "Edit", edit_randomizer_path(@randomizer)
     = link_to "Delete", randomizer_path(@randomizer), :method => "delete", :confirm => "Are you sure?"
   = link_to "Refresh", randomizer_path(@randomizer, :format => :json), :remote => "true", :class => "refresh"
+  = check_box_tag "auto"
+  Auto-refresh
 
 
